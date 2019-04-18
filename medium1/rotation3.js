@@ -31,18 +31,25 @@ const rotateRightmostDigits = (number, n) => {
 // 105 -> 051
 // 051 -> 15
 // data structure: string, array
-// take the given number and convert into a string
-// start a counter at the length of the string
-// iterate counter to greater than 1 times:
-// - string is reassigned the value of calling rotateRightmostDigits with the
-// current count as the second argument and the string converted to number as the first,
-// which then converted to a string
-//
+// iterate from length of number in string format to greater than 1 times:
+// - number is reassigned the value of calling rotateRightmostDigits with the
+//   current count as the second argument and the number as the first,
+// return the final number
+
+const maxRotation = (number) => {
+  let rotatedNum = number;
+
+  for (let i = String(number).length; i > 1; i -= 1) {
+    rotatedNum = rotateRightmostDigits(rotatedNum, i);
+  }
+
+  return rotatedNum;
+};
 
 // Examples:
 
-maxRotation(735291); // 321579
-maxRotation(3); // 3
-maxRotation(35); // 53
-maxRotation(105); // 15 -- the leading zero gets dropped
-maxRotation(8703529146); // 7321609845
+console.log(maxRotation(735291)); // 321579
+console.log(maxRotation(3)); // 3
+console.log(maxRotation(35)); // 53
+console.log(maxRotation(105)); // 15 -- the leading zero gets dropped
+console.log(maxRotation(8703529146)); // 7321609845
