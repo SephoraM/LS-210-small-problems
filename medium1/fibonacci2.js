@@ -10,21 +10,6 @@
 // Rewrite your recursive fibonacci function so that it computes its results without using
 // recursion.
 
-// input: number which is the nth postion in the fibonacci sequence
-// output: number which is the nth number in the fibonacci sequence
-// rules:
-// - use an iterative approach to the solution
-// - calculate the sum of the last two digits in the sequence to get the next number
-// algorithm:
-// initialize first place in sequence to 1,
-// initialize last place in sequence to 1,
-// create a temporary variable
-// loop from 2 till given number inclusive
-//   - assign a temporary variable with the value of last
-//   - assign the last variable to the sum of the temporary variable and the first
-//   - assign the first variable with the temporary variable
-// return the last number
-
 const fibonacci = (n) => {
   let lastTwo = [1, 1];
 

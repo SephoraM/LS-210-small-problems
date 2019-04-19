@@ -12,10 +12,15 @@
 // For this exercise, your objective is to refactor the recursive fibonacci function to
 // use memoization.
 
+const fibonacciNumbers = {};
+
 const fibonacci = (n) => {
   if (n <= 2) return 1;
+  if (fibonacciNumbers[n]) return fibonacciNumbers[n];
 
-  return fibonacci(n - 1) + fibonacci(n - 2);
+  fibonacciNumbers[n] = fibonacci(n - 1) + fibonacci(n - 2);
+
+  return fibonacciNumbers[n];
 };
 
 // Examples:
