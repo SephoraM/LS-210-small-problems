@@ -43,6 +43,57 @@
 // the function should mutate the array. You may assume that the array contains at least
 // two elements.
 
+// input: array with at least two elements
+// output: same array with all elements sorted using bubble sort algorithm
+// questions:
+// - should i assume that only primitive values, i.e., strings, numbers will be present in array?
+// - if other elements are present, would you like an error message? or a comparison based on ...?
+// - Will all the elements in the given array be of the same type?
+// - I noted that the array will contain at least two elements, so I assume I do not need to account
+//   for less?
+// - should I account any other data type being given as an argument in error?
+// - should the function return the sorted array?
+// rules:
+// - make multiple passes over the array
+// - compare each pair of consecutive elements
+//  - if the first element is greater than the second element, swap the placement
+// - when a full pass over the array results in no swaps, the sort is complete
+// - when a pass is complete, the last element of that pass is in its correct place
+// - this means that for each iteration, the length of the iteration is reduced by one
+// - this sort alters the original array and returns it
+// - data structures/types: array, looping construct, boolean
+// algorithm:
+// swap count is length of the array minus 1
+// made a swap is true
+// while made a swap is true
+// - made a swap is false
+// - iterate over the array up to swap count
+//  - compare the element at the current index to the element at the next index
+//    if current is greater than next:
+//      - swap elements
+//      - made a swap is true
+//  - decrement swap count by one
+// - return undefined
+
+const bubbleSort = (array) => {
+  let swapLength = array.length - 1;
+  let isSwapped = true;
+
+  while (isSwapped) {
+    isSwapped = false;
+
+    for (let i = 0; i < swapLength; i += 1) {
+      if (array[i] > array[i + 1]) {
+        const temp = array[i];
+        array[i] = array[i + 1];
+        array[i + 1] = temp;
+        isSwapped = true;
+      }
+    }
+    swapLength -= 1;
+  }
+};
+
 // Examples:
 
 var array = [5, 3];
