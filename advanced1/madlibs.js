@@ -42,7 +42,7 @@ const madlibs = (template) => {
     adv: ['easily', 'lazily', 'noisily', 'excitedly'],
   };
 
-  const randomIdx = wordList => Math.floor(Math.random() * Math.floor(wordList.length));
+  const randomIdx = wordList => Math.floor(Math.random() * wordList.length);
 
   const replacer = wordType => replacementWords[wordType][randomIdx(replacementWords[wordType])];
 
