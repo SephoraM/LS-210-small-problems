@@ -38,6 +38,23 @@ const diamond = (number) => {
   }
 };
 
+// const diamond = (size) => {
+//   const middleRow = '*'.repeat(size);
+//   const rows = [middleRow];
+//   let starCount = size;
+//   let starRow;
+//
+//   for (let i = 1; i <= Math.floor(size / 2); i += 1) {
+//     starCount -= 2;
+//     starRow = '*'.repeat(starCount).padStart(starCount + i, ' ');
+//
+//     rows.push(starRow);
+//     rows.unshift(starRow);
+//   }
+//
+//   rows.forEach(row => console.log(row));
+// };
+
 // Examples:
 
 diamond(1);
